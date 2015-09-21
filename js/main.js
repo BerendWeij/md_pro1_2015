@@ -41,4 +41,18 @@ window.addEventListener("load", function(){
 
     createUser().delete();
 
+
+
+
+
+    var users = [];
+    var teachers = [];
+    var schools = [];
+
+    Array.prototype.size = 42;
+
+    console.log(users.size);
+    console.log(teachers.size);
+    console.log(schools.size);
+
 });
