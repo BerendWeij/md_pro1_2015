@@ -1,10 +1,4 @@
-$(function () {
-    // Grab the template script
-    var addressTemplateSrc = $("#address-template").html();
-
-    // Compile the template
-    var addressTemplate = Handlebars.compile(addressTemplateSrc);
-
+window.addEventListener("load", function () {
     // Define our data object
     var addressData = {
         "city": "London",
@@ -12,17 +6,16 @@ $(function () {
         "number": "221B"
     };
 
-    var studentAddress = {
-        "city": "Amsterdam",
-        "street": "Contactweg",
-        "number": "35"
-    };
+    // Grab the template script
+    var addressTemplateSrc = document.querySelector("#address-template").innerHTML;
+
+    // Compile the template
+    var addressTemplate = Handlebars.compile(addressTemplateSrc);
 
     // Pass our data to the template
     var addressHTML = addressTemplate(addressData);
-    var schoolAddressHTML = addressTemplate(studentAddress);
 
-    // Add the compiled html to the page
-    $('.content-placeholder').html(addressHTML + schoolAddressHTML);
+    document.querySelector("#container").innerHTML = addressHTML;
+
 
 });
